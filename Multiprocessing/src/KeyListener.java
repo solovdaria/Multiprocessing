@@ -22,7 +22,7 @@ public class KeyListener implements NativeKeyListener {
                 System.out.println("We couldn't compute function F so fast. Sorry.");
             if (g_is == -1)
                 System.out.println("We couldn't compute function G so fast. Sorry.");
-            else System.out.println("But result was computed: " + (f_is | g_is));
+            else System.out.println("But result was computed: " + ("\n F: " + f_is + "\n G: " + g_is));
             System.exit(0);
         }
     }

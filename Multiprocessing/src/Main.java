@@ -8,6 +8,7 @@ import java.io.*;
 import java.net.*;
 import java.util.logging.*;
 
+
 public class Main {
     public static Process processF;
     public static Process processG;
@@ -23,7 +24,24 @@ public class Main {
         System.exit(0);
     }
 
+  /*  public static int conj(int f, int g)
+    {
+        if (f==0 && g==0) return 0;
+        else if (f==0 && g==1) return 0;
+        else if (f==1 && g==0) return 0;
+        else return 1;
+    }
+
+    public static int dis(int f, int g)
+    {
+        if (f==0 && g==0) return 0;
+        else if (f==0 && g==1) return 1;
+        else if (f==1 && g==0) return 1;
+        else return 1;
+    }*/
+
     public static void main(String[] args) {
+
         //int test = Integer.parseInt("6");
         Scanner console = new Scanner(System.in);
         int test = console.nextInt();
@@ -73,6 +91,7 @@ public class Main {
                         resultsInZero("F");
                         break;
                     }
+                    System.out.println("F is done");
                 }
 
                 if (inputG.available() > 0 && resultOfG == -1) {
@@ -82,11 +101,14 @@ public class Main {
                         resultsInZero("G");
                         break;
                     }
+                    System.out.println("G is done");
                 }
 
                 if (resultOfF > 0 && resultOfG >0) break;
             }
-            System.out.print("\nResult: " + (resultOfF | resultOfG) + "\n");
+            System.out.print("\nResult: \n" + ("F: " + resultOfF + "\nG: " + resultOfG) + "\n" );
+         //   System.out.println("Conjunction: " + (conj(resultOfF, resultOfG)));
+          //  System.out.println("Disjunction: " + (dis(resultOfF, resultOfG)));
 
             inputF.close();
             inputG.close();
